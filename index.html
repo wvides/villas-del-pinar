@@ -34,17 +34,21 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: flex-end;
-      padding-bottom: 2.2rem;
+      justify-content: flex-start;
+      padding-top: 2.8rem;
+      padding-bottom: 1.2rem;
       text-align: center;
     }
     .hero-overlay h1 {
-      font-size: 2.8rem;
+      font-size: clamp(2rem, 5vw, 2.8rem);
       font-weight: 700;
       color: #fff;
       margin-bottom: 0.4rem;
       text-shadow: 0 6px 32px #0008, 0 1px 1px #000a;
       letter-spacing: -0.01em;
+      line-height: 1.15;
+      word-break: break-word;
+      hyphens: auto;
     }
     .hero-overlay p {
       font-size: 1.32rem;
@@ -115,6 +119,10 @@
     .brand {
       flex: 1;
     }
+    .brand strong {
+      display: block;
+      margin-bottom: 0.7em;
+    }
     .color-sample {
       display: flex;
       align-items: center;
@@ -140,8 +148,26 @@
       .hero-bg { height: 38vw; min-height: 120px; max-height: 180px; }
       .colors { flex-direction: column; gap: 1.1rem; }
       section { padding: 1.1rem 0.5rem; }
-      .info { flex-direction: column; align-items: flex-start; padding: 1.1rem 0.7rem; }
-      .hero-overlay h1 { font-size: 1.5rem; }
+      .info {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 1.2rem 0.85rem 1.1rem 0.85rem;
+        margin-top: -2.2rem;
+        position: relative;
+        z-index: 3;
+        box-shadow: 0 4px 32px 0 rgba(30,40,90,0.09), 0 1.5px 8px 0 rgba(255,255,255,0.05) inset;
+        background: rgba(255,255,255,0.18);
+        border-radius: 18px;
+        border: 1.5px solid rgba(255,255,255,0.35);
+        backdrop-filter: blur(14px) saturate(160%);
+        -webkit-backdrop-filter: blur(14px) saturate(160%);
+      }
+      main { padding-top: 1.5rem; }
+      .hero-overlay h1 {
+        font-size: clamp(1.3rem, 6vw, 2rem);
+        line-height: 1.18;
+        padding: 0 0.2em;
+      }
       .hero-overlay p { font-size: 1rem; }
     }
   </style>
@@ -150,7 +176,7 @@
   <div class="hero-bg">
     <div class="hero-overlay">
       <h1>Paleta de Colores de Villas del Pinar, Guatemala</h1>
-      <p>Condominio residencial en San Cristóbal, Mixco</p>
+
     </div>
   </div>
   <main>
